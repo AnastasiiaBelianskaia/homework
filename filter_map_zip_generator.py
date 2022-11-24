@@ -20,11 +20,11 @@ def get_words(chars):
 def crop_text(length):
     i = 0
     yield LONG_TEXT[i:length]
-    i += length
-    yield LONG_TEXT[i:length + i]
-    i += length
-    yield LONG_TEXT[i:length + i]
-    return 0
+    for repeats in range(len(LONG_TEXT) // length):
+        i += length
+        yield LONG_TEXT[i:length + i]
+    return repeats
+
 
 assert get_words('') == []
 
