@@ -23,7 +23,8 @@ def crop_text(length):
     for repeats in range(len(LONG_TEXT) // length):
         i += length
         yield LONG_TEXT[i:length + i]
-    return repeats
+    return 0
+
 
 
 assert get_words('') == []
