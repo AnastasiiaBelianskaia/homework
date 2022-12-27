@@ -28,13 +28,13 @@ class Storage:
         }
 
     def get_from_table(self, table_name):
-        if table_name in self._data:
+        if table_name not in self._data:
             raise ValueError('no such a table')
 
         return self._data[table_name]['data']
 
     def add_to_table(self, table_name, item, *items):
-        if table_name in self._data:
+        if table_name not in self._data:
             raise ValueError('no such a table')
 
         items = (item,) + items
